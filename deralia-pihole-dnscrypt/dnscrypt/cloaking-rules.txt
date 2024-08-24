@@ -1,0 +1,77 @@
+## Cloaking rules
+## Taken from: https://github.com/AdguardTeam/AdGuardHome/tree/master/internal/filtering/safesearch/rules
+
+# BING
+www.bing.com					strict.bing.com
+
+# DUCKDUCKGO
+duckduckgo.com					safe.duckduckgo.com
+start.duckduckgo.com			safe.duckduckgo.com
+www.duckduckgo.com				safe.duckduckgo.com
+
+# GOOGLE
+www.google.*					forcesafesearch.google.com
+
+# PIXABAY
+pixabay.com						safesearch.pixabay.com
+
+# YANDEX
+www.xn--d1acpjx3f.xn--p1ai		213.180.193.56
+www.ya.ru						213.180.193.56
+www.yandex.az					213.180.193.56
+www.yandex.by					213.180.193.56
+www.yandex.co.il				213.180.193.56
+www.yandex.com.am				213.180.193.56
+www.yandex.com.ge				213.180.193.56
+www.yandex.com.ru				213.180.193.56
+www.yandex.com.tr				213.180.193.56
+www.yandex.com					213.180.193.56
+www.yandex.de					213.180.193.56
+www.yandex.ee					213.180.193.56
+www.yandex.eu					213.180.193.56
+www.yandex.fi					213.180.193.56
+www.yandex.fr					213.180.193.56
+www.yandex.kz					213.180.193.56
+www.yandex.lt					213.180.193.56
+www.yandex.lv					213.180.193.56
+www.yandex.md					213.180.193.56
+www.yandex.net					213.180.193.56
+www.yandex.org					213.180.193.56
+www.yandex.pl					213.180.193.56
+www.yandex.ru					213.180.193.56
+www.yandex.tj					213.180.193.56
+www.yandex.tm					213.180.193.56
+www.yandex.uz					213.180.193.56
+xn--d1acpjx3f.xn--p1ai			213.180.193.56
+ya.ru							213.180.193.56
+yandex.az						213.180.193.56
+yandex.by						213.180.193.56
+yandex.co.il					213.180.193.56
+yandex.com.am					213.180.193.56
+yandex.com.ge					213.180.193.56
+yandex.com.ru					213.180.193.56
+yandex.com.tr					213.180.193.56
+yandex.com						213.180.193.56
+yandex.de						213.180.193.56
+yandex.ee						213.180.193.56
+yandex.eu						213.180.193.56
+yandex.fi						213.180.193.56
+yandex.fr						213.180.193.56
+yandex.kz						213.180.193.56
+yandex.lt						213.180.193.56
+yandex.lv						213.180.193.56
+yandex.md						213.180.193.56
+yandex.net						213.180.193.56
+yandex.org						213.180.193.56
+yandex.pl						213.180.193.56
+yandex.ru						213.180.193.56
+yandex.tj						213.180.193.56
+yandex.tm						213.180.193.56
+yandex.uz						213.180.193.56
+
+# YOUTUBE
+www.youtube.com					restrictmoderate.youtube.com
+m.youtube.com					restrictmoderate.youtube.com
+youtubei.googleapis.com			restrictmoderate.youtube.com
+youtube.googleapis.com			restrictmoderate.youtube.com
+www.youtube-nocookie.com		restrictmoderate.youtube.com

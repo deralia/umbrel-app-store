@@ -1,0 +1,82 @@
+# List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
+listen_addresses = ['0.0.0.0:53']
+
+# List of servers to use. [] -> Use all that meet config options
+server_names = []
+
+# Use servers reachable over IPv4
+ipv4_servers = true
+
+# Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
+ipv6_servers = false
+
+# Use servers implementing the DNSCrypt protocol
+dnscrypt_servers = true
+
+# Use servers implementing the DNS-over-HTTPS protocol
+doh_servers = true
+
+# Use servers implementing the Oblivious DoH protocol
+#odoh_servers = false
+
+# Server must support DNS security extensions (DNSSEC)
+require_dnssec = true
+
+# Server must not log user queries (declarative)
+require_nolog = true
+
+# Server must not enforce its own blocklist (for parental control, ads blocking...)
+require_nofilter = true
+
+# Enable *experimental* support for HTTP/3 (DoH3, HTTP over QUIC)
+#http3 = false
+
+# Load-balancing strategy
+lb_strategy = 'p2'
+
+# Cloaking returns a predefined address for a specific name.
+#cloaking_rules = '/etc/dnscrypt-proxy/cloaking-rules.txt'
+
+# TTL used when serving entries in cloaking-rules.txt
+#cloak_ttl = 600
+#cloak_ptr = false
+
+# Log client queries to a file
+[query_log]
+file = '/dev/stdout'
+
+# Log queries for nonexistent zones. These queries can reveal the presence of malware, broken/obsolete applications, and devices signaling their presence to 3rd parties.
+[nx_log]
+file = '/dev/stdout'
+
+# Remote lists of available servers
+[sources]
+
+# Anonymized DNS servers and relays
+[sources.public-resolvers]
+urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/public-resolvers.md']
+cache_file = '/tmp/public-resolvers.md'
+minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+refresh_delay = 72
+prefix = ''
+
+[sources.relays]
+urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/relays.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/relays.md']
+cache_file = '/tmp/relays.md'
+minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+refresh_delay = 72
+prefix = ''
+
+# ODoH (Oblivious DoH) servers and relays
+#[sources.odoh-servers]
+#  urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-servers.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/odoh-servers.md']
+#  cache_file = '/tmp/odoh-servers.md'
+#  minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+#  refresh_delay = 24
+#  prefix = ''
+#[sources.odoh-relays]
+#  urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-relays.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/odoh-relays.md']
+#  cache_file = '/tmp/odoh-relays.md'
+#  minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+#  refresh_delay = 24
+#  prefix = ''

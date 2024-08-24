@@ -1,0 +1,36 @@
+manifestVersion: 1
+id: deralia-pihole-dnscrypt
+name: Secure Pi-hole
+tagline: Block ads and trackers with Pi-Hole through encrypted DNS queries via DNSCrypt
+icon: https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/icon.svg
+category: Networking
+version: "2024.07.0"
+port: 8082
+description: >-
+  Based on the official Umbrel's Pi-hole App.
+
+
+  This is a replacement for the Pi-Hole app provided by the official Umbrel App Store (as it uses the same ports).
+
+
+  This version of Pi-Hole comes with DNSCrypt installed and configured to encrypt your DNS queries from peeping eyes.
+
+
+  Pi-Hole runs DNS queries through DNSCrypt, which resolves DNS queries using HTTPS (secure connections) instead of
+  unencrypted DNS queries. This ensures that your DNS queries are encrypted and secure.
+
+developer: Pi-hole®
+website: https://pi-hole.net/
+sourceCode: https://github.com/pi-hole/pi-hole
+submitter: DavidGarciaCat
+repo: https://github.com/deralia/umbrel-app-store
+gallery:
+  - https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/1.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/2.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/3.jpg
+releaseNotes: >-
+  Upgraded to the latest versions of Pi-Hole (2024.07.0) and DNSCrypt (2024-08-23)
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: "{^,3aRz)!XKl(VihRw@y2qvV^;kXTQ9z"
