@@ -1,17 +1,31 @@
-## Umbrel Community App Store Template
+# Deralia's Umbrel Community App Store
 
-This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
+This repository is another Community-driven App Store for Umbrel OS.
 
 ## How to use:
 
-1. Start by clicking the "Use this template" button located above.
-2. Assign an ID and name to your app store within the `umbrel-app-store.yml` file. This file specifies two important attributes:
-    - `id` - Acts as a unique prefix for every app within your Community App Store. You must start your application's ID with your app store's ID. For instance, in this template, the app store ID is `sparkles`, and there's an app named `hello world`. Consequently, the app's ID should be: `sparkles-hello-world`.
-    - `name` - This is the name of the Community App Store displayed in the umbrelOS UI.
-3. Change the name of the `sparkles-hello-world` folder to match your app's ID. The app ID is for you to decide. For example, if your app store ID is `whistles`, and your app is named My Video Downloader, you could set its app ID to `whistles-my-video-downloader`, and rename the folder accordingly.
-4. Next, enter your app's listing details in the `whistles-my-video-downloader/umbrel-app.yml`. These are displayed in the umbrelOS UI.
-5. Include the necessary Docker services in `whistles-my-video-downloader/docker-compose.yml`.
-6. That's it! Your Community App Store, featuring your unique app, is now set up and ready to go. To use your Community App Store, you can add its GitHub url the umbrelOS user interface as shown in the following demo:
+### Step 1: Browse the Community App Stores
 
+Open the Umbrel OS App Store and click on the triple-dot icon in the top right corner.
 
-https://user-images.githubusercontent.com/10330103/197889452-e5cd7e96-3233-4a09-b475-94b754adc7a3.mp4
+There you can access to the `Community App Stores`.
+
+![Umbrel OS App Store](./assets/how-to-01.png)
+
+### Step 2: Add this Community App Store
+
+You need to copy and paste the URL of this repository in the input field and click on the "Add" button.
+
+```
+https://github.com/deralia/umbrel-app-store
+```
+
+![Umbrel OS Community App Stores](./assets/how-to-02.png)
+
+### Step 3: Browse this Community App Store
+
+Now you can access to the `Deralia's Umbrel Community App Store` and install the apps you want.
+
+Just click on the `Open` button to see the list of available apps.
+
+![Umbrel OS Deralia Community App Store](./assets/how-to-03.png)
