@@ -1,0 +1,27 @@
+services:
+
+  odoo:
+    image: odoo:17.0@sha256:1faaaea1131accd26aa4250b6d49a93164b01192cb824b4874a5c61fffd68856
+    container_name: odoo-app
+    hostname: odoo-app
+    restart: on-failure
+    ports:
+      - "8069:8069"
+    #user: "101:101"
+    user: odoo:odoo
+    volumes:
+      - ${APP_DATA_DIR}/data/odoo:/var/lib/odoo
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine@sha256:620dc79c45816cff4f38f0b49c71f15a3bc6bab9439ba1eea3a76d23ebcf1e4d
+    container_name: odoo-database
+    hostname: odoo-database
+    restart: on-failure
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data

@@ -1,0 +1,3 @@
+data/
+!data/odoo/.gitkeep
+!data/postgres/.gitkeep

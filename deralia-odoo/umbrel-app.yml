@@ -1,0 +1,39 @@
+manifestVersion: 1
+id: deralia-odoo
+name: Odoo (OpenERP)
+tagline: Manage all your business on one platform
+icon: https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/icon.png
+category: finance
+version: 17.0
+port: 8069
+description: >-
+  Odoo, formerly known as OpenERP, is a suite of open-source business apps written in Python
+  and released under the LGPL license.
+
+
+  IMPORTANT: PLEASE USE ANYTHING BUT "postgres" AS THE DATABASE NAME.
+
+
+  This suite of applications covers all business needs, from Website/Ecommerce down to manufacturing,
+  inventory and accounting, all seamlessly integrated. It is the first time ever a software editor
+  managed to reach such a functional coverage.
+
+
+  Odoo is the most installed business software in the world. Odoo is used by 2.000.000 users worldwide
+  ranging from very small companies (1 user) to very large ones (300 000 users).
+
+developer: Odoo SA
+website: https://www.odoo.com/
+sourceCode: https://github.com/odoo/odoo
+submitter: DavidGarciaCat
+repo: https://github.com/deralia/umbrel-app-store
+gallery:
+  - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/1.png
+  - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/2.png
+  - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/3.png
+#releaseNotes: >-
+#  Upgraded to the latest versions of Pi-Hole (2024.07.0) and DNSCrypt (2024-08-23)
+dependencies: []
+path: ""
+#defaultUsername: ""
+#defaultPassword: ""
