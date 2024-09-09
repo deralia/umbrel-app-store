@@ -7,8 +7,7 @@ services:
     restart: on-failure
     ports:
       - "8069:8069"
-    #user: "101:101"
-    user: odoo:odoo
+    user: root:root
     volumes:
       - ${APP_DATA_DIR}/data/odoo:/var/lib/odoo
     depends_on:
