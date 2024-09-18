@@ -31,6 +31,6 @@ gallery:
 releaseNotes: >-
   Upgraded to the latest versions of Pi-Hole (2024.07.0) and DNSCrypt (2024-08-23)
 dependencies: []
-path: ""
+path: "/admin/"
 defaultUsername: ""
 defaultPassword: "{^,3aRz)!XKl(VihRw@y2qvV^;kXTQ9z"
