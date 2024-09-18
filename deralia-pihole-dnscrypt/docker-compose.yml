@@ -23,7 +23,7 @@ services:
         ipv4_address: 172.20.0.2
 
   dns-crypt:
-    image: zydou/dnscrypt:2024-08-23@sha256:117c0cbd74e4792cdf4e92941180be14eafcee8a60c6f47f8ad375aeebfdf400
+    image: zydou/dnscrypt:2024-09-17@sha256:014b764361c10bfa391cbaedf01aea809e8b66b2f61332d8c97a4f1e541e6fb0
     hostname: dns-crypt
     restart: on-failure
     environment:
