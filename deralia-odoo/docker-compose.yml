@@ -1,7 +1,7 @@
 services:
 
   odoo:
-    image: odoo:17.0@sha256:1faaaea1131accd26aa4250b6d49a93164b01192cb824b4874a5c61fffd68856
+    image: odoo:18.0-20241209@sha256:d2a4f769fa8ed83cf5004bcd1bb3c2d412019a4c8cc7425994dcb87b6e617bbd
     container_name: odoo-app
     hostname: odoo-app
     restart: on-failure

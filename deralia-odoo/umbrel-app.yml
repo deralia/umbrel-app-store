@@ -4,7 +4,7 @@ name: Odoo (OpenERP)
 tagline: Manage all your business on one platform
 icon: https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/icon.png
 category: finance
-version: 17.0
+version: 18.0-20241209
 port: 8069
 description: >-
   Odoo, formerly known as OpenERP, is a suite of open-source business apps written in Python
@@ -31,9 +31,7 @@ gallery:
   - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/1.png
   - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/2.png
   - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-odoo/assets/3.png
-#releaseNotes: >-
-#  Upgraded to the latest versions of Pi-Hole (2024.07.0) and DNSCrypt (2024-08-23)
+releaseNotes: >-
+  Upgraded to the latest versions of Odoo (18.0-20241209)
 dependencies: []
 path: ""
-#defaultUsername: ""
-#defaultPassword: ""
