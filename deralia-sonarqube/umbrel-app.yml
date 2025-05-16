@@ -1,0 +1,29 @@
+manifestVersion: 1
+id: deralia-sonarqube
+name: SonarQube (Community Build)
+tagline: On-premise analysis tool designed to detect quality and security issues
+icon: https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-sonarqube/assets/sonarqube.svg
+category: developer
+version: "9.9.8"
+port: 8082
+description: >-
+  SonarQube is an on-premise analysis tool designed to detect quality and security issues in 30+ languages, frameworks,
+  and IaC platforms. The solution also provides fix recommendations leveraging AI with Sonar's AI CodeFix capability.
+
+
+  By integrating directly with your CI pipeline or on one of the supported DevOps platforms, your code is checked
+  against an extensive set of rules that cover many attributes of code, such as maintainability, reliability, and
+  security issues on each merge/pull request.
+
+developer: SonarSource SA
+website: https://www.sonarsource.com/products/sonarqube/
+sourceCode: https://github.com/SonarSource/sonarqube
+submitter: DavidGarciaCat
+repo: https://github.com/deralia/umbrel-app-store
+gallery:
+  - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-sonarqube/assets/1.png
+  - https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-sonarqube/assets/2.png
+releaseNotes: >-
+  Initial release
+username: admin
+password: admin

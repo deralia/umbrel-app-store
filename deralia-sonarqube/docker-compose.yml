@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+
+  # docker run -d --name sonarqube   -p 9000:9000  -e sonar.jdbc.url=jdbc:postgresql://postgres/postgres  -e sonar.jdbc.username=root -e sonar.jdbc.password=Test12345  --network sonarqube_network sonarqube
+  sonarqube-app:
+    image: sonarqube:9.9.8-community@sha256:93f94e0ea6148cd02d52378049dad85d0f2d6c90c485578317f76addf2af9f3d
+    hostname: sonarqube
+    restart: on-failure
+    ports: [ "9000:9000" ]
+    environment:
+      - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgres/postgres
+      - sonar.jdbc.username=sonarqube
+      - sonar.jdbc.password=sonarqube
+    volumes:
+      - ./data:/opt/sonarqube/data
+      - ./logs:/opt/sonarqube/logs
+      - ./extensions:/opt/sonarqube/extensions
+
+  # docker run --name postgres  -e POSTGRES_USER=root -e POSTGRES_PASSWORD=Test12345  -p 5432:5432 --network sonarqube_network -d postgres
+  sonarqube-postgres:
+    image: postgres:17.5-alpine@sha256:f325a29ec9deb7039c5f07761d77d79d537dac836ecd99f982f6ca5476724604
+    hostname: postgres
+    restart: on-failure
+    environment:
+      POSTGRES_USER: sonarqube
+      POSTGRES_PASSWORD: sonarqube
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
