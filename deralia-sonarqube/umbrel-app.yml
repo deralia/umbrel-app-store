@@ -4,7 +4,7 @@ name: SonarQube
 tagline: [Community Build] on-premise analysis tool designed to detect quality and security issues
 icon: https://raw.githubusercontent.com/deralia/umbrel-app-store/master/deralia-sonarqube/assets/sonarqube.svg
 category: developer
-version: "9.9.8-community"
+version: 9.9.8
 port: 9000
 description: >-
   SonarQube is an on-premise analysis tool designed to detect quality and security issues in 30+ languages, frameworks,
