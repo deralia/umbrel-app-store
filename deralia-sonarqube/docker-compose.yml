@@ -1,4 +1,4 @@
-version: "3.7"
+#version: "3.7"
 
 services:
 
@@ -7,21 +7,21 @@ services:
     hostname: sonarqube
     restart: on-failure
     ports: [ "9082:9000" ]
-    environment:
-      - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgres/postgres
-      - sonar.jdbc.username=sonarqube
-      - sonar.jdbc.password=sonarqube
+#    environment:
+#      - sonar.jdbc.url=jdbc:postgresql://sonarqube-postgres/postgres
+#      - sonar.jdbc.username=sonarqube
+#      - sonar.jdbc.password=sonarqube
     volumes:
       - ./data:/opt/sonarqube/data
       - ./logs:/opt/sonarqube/logs
       - ./extensions:/opt/sonarqube/extensions
 
-  sonarqube-postgres:
-    image: postgres:17.5-alpine@sha256:f325a29ec9deb7039c5f07761d77d79d537dac836ecd99f982f6ca5476724604
-    hostname: postgres
-    restart: on-failure
-    environment:
-      POSTGRES_USER: sonarqube
-      POSTGRES_PASSWORD: sonarqube
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
+#  sonarqube-postgres:
+#    image: postgres:17.5-alpine@sha256:f325a29ec9deb7039c5f07761d77d79d537dac836ecd99f982f6ca5476724604
+#    hostname: postgres
+#    restart: on-failure
+#    environment:
+#      POSTGRES_USER: sonarqube
+#      POSTGRES_PASSWORD: sonarqube
+#    volumes:
+#      - ./postgres:/var/lib/postgresql/data
