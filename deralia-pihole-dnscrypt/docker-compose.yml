@@ -3,7 +3,7 @@ version: "3.7"
 services:
 
   pi-hole:
-    image: pihole/pihole:2025.02.7@sha256:ac63178526b71aa575069945f68e7bfb57541fefcd6150d752eeae82b5638141
+    image: pihole/pihole:2025.07.1@sha256:f84c1654bfbafc44e2ac8447a1fa2fb739eae66395b4c179d2c59cb93e1321f3
     hostname: pi-hole
     restart: on-failure
     environment:
@@ -23,7 +23,7 @@ services:
         ipv4_address: 172.20.0.2
 
   dns-crypt:
-    image: zydou/dnscrypt:2025-03-01@sha256:6e91ecdb9150c40a23fd7f50a0f67dc8325eeb5e07d9f6874564637a78e3aefe
+    image: zydou/dnscrypt:2025-07-18@sha256:a2226d762a5b74c20097661dc8443d9145ae4285c2e792feb3fd2bb011c9be9b
     hostname: dns-crypt
     restart: on-failure
     environment:
