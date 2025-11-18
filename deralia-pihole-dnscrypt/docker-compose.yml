@@ -7,28 +7,28 @@ services:
     hostname: pi-hole
     restart: on-failure
     environment:
-      TZ: UTC
-      VIRTUAL_HOST: ${APP_DOMAIN}
-      FTLCONF_dns_upstream: 172.20.0.3
-      FTLCONF_dns_listeningmode: SINGLE
-      FTLCONF_dns_querylogging: false
-      FTLCONF_dns_cache_size: 10000
-      #FTLCONF_dns_blocking_mode: IP
-      #FTLCONF_dns_reply_blocking_force4: true
-      #FTLCONF_dns_reply_blocking_ipv4: 172.25.0.5
-      FTLCONF_dns_ratelimit_count: 0
-      FTLCONF_dns_ratelimit_interval: 0
-      FTLCONF_dhcp_active: false
-      FTLCONF_dhcp_ipv6: false
-      FTLCONF_ntp_ipv4_active: false
-      FTLCONF_ntp_ipv6_active: false
-      FTLCONF_ntp_sync_active: false
-      FTLCONF_database_maxdbdays: 30
-      FTLCONF_database_network_expire: 7
-      FTLCONF_webserver_port: 80
-      FTLCONF_webserver_interface_theme: default-darker
-      #FTLCONF_misc_privacylevel: 3
-      FTLCONF_misc_dnsmasq_lines: dns-forward-max=5096;min-cache-ttl=300;rebind-domain-ok=
+      - TZ=UTC
+      - VIRTUAL_HOST=${APP_DOMAIN}
+      - FTLCONF_dns_upstream=172.20.0.3
+      - FTLCONF_dns_listeningmode: SINGLE
+      - FTLCONF_dns_querylogging: false
+      - FTLCONF_dns_cache_size: 10000
+      #- FTLCONF_dns_blocking_mode: IP
+      #- FTLCONF_dns_reply_blocking_force4: true
+      #- FTLCONF_dns_reply_blocking_ipv4: 172.25.0.5
+      - FTLCONF_dns_ratelimit_count: 0
+      - FTLCONF_dns_ratelimit_interval: 0
+      - FTLCONF_dhcp_active: false
+      - FTLCONF_dhcp_ipv6: false
+      - FTLCONF_ntp_ipv4_active: false
+      - FTLCONF_ntp_ipv6_active: false
+      - FTLCONF_ntp_sync_active: false
+      - FTLCONF_database_maxdbdays: 30
+      - FTLCONF_database_network_expire: 7
+      - FTLCONF_webserver_port: 80
+      - FTLCONF_webserver_interface_theme: default-darker
+      #- FTLCONF_misc_privacylevel: 3
+      - FTLCONF_misc_dnsmasq_lines: dns-forward-max=5096;min-cache-ttl=300;rebind-domain-ok=
     ports:
       - "53:53/tcp"
       - "53:53/udp"
