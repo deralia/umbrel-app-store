@@ -15,8 +15,7 @@ services:
       - ${APP_DATA_DIR}/pihole/etc/pihole:/etc/pihole
       - ${APP_DATA_DIR}/pihole/etc/dnsmasq.d:/etc/dnsmasq.d
     depends_on:
-      dns-crypt:
-        condition: service_healthy
+      - dns-crypt
     network_mode: host
   dns-crypt:
     image: zydou/dnscrypt:2026-01-24@sha256:dcdd87c14e7bde765ef76ab47a669e4df129038b5d17bbe80195cac3a79c3d91
@@ -27,8 +26,3 @@ services:
     volumes:
       - ${APP_DATA_DIR}/dnscrypt/dnscrypt-proxy.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml
     network_mode: host
-    healthcheck:
-      test: ["CMD-SHELL", "nc -zv 127.0.0.1 5300 || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
