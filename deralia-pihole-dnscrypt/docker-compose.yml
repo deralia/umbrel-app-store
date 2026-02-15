@@ -9,15 +9,19 @@ services:
     environment:
       - TZ=UTC
       - VIRTUAL_HOST=${APP_DOMAIN}
-      - FTLCONF_dns_upstreams=127.0.0.1#5300
-      - FTLCONF_webserver_port=8082
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8082:80/tcp"
     volumes:
       - ${APP_DATA_DIR}/pihole/etc/pihole:/etc/pihole
       - ${APP_DATA_DIR}/pihole/etc/dnsmasq.d:/etc/dnsmasq.d
     depends_on:
-      dns-crypt:
-        condition: service_healthy
-    network_mode: host
+      - dns-crypt
+    networks:
+      pi-hole-dns-crypt:
+        ipv4_address: 172.20.0.2
+
   dns-crypt:
     image: zydou/dnscrypt:2026-01-24@sha256:dcdd87c14e7bde765ef76ab47a669e4df129038b5d17bbe80195cac3a79c3d91
     hostname: dns-crypt
@@ -26,9 +30,16 @@ services:
       - TZ=UTC
     volumes:
       - ${APP_DATA_DIR}/dnscrypt/dnscrypt-proxy.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml
-    network_mode: host
-    healthcheck:
-      test: ["CMD-SHELL", "nc -zv 127.0.0.1 5300 || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+    dns:
+      - "1.1.1.1"
+      - "1.0.0.1"
+    networks:
+      pi-hole-dns-crypt:
+        ipv4_address: 172.20.0.3
+
+networks:
+  pi-hole-dns-crypt:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/29
