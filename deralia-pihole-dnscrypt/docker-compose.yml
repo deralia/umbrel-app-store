@@ -3,43 +3,32 @@ version: "3.7"
 services:
 
   pi-hole:
-    image: pihole/pihole:2025.11.0@sha256:e28e239f55e648a9d32c8f065650acfe987ddebf1cd5f64f1c071e8716156ceb
+    image: pihole/pihole:2025.11.1@sha256:91dc91ddd413bf461c283204558f8f21839851e9824799075a7ceff7c77eea40
     hostname: pi-hole
     restart: on-failure
     environment:
       - TZ=UTC
       - VIRTUAL_HOST=${APP_DOMAIN}
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "8082:80/tcp"
+      - FTLCONF_dns_upstreams=127.0.0.1#5300
+      - FTLCONF_webserver_port=8082
     volumes:
       - ${APP_DATA_DIR}/pihole/etc/pihole:/etc/pihole
       - ${APP_DATA_DIR}/pihole/etc/dnsmasq.d:/etc/dnsmasq.d
     depends_on:
-      - dns-crypt
-    networks:
-      pi-hole-dns-crypt:
-        ipv4_address: 172.20.0.2
-
+      dns-crypt:
+        condition: service_healthy
+    network_mode: host
   dns-crypt:
-    image: zydou/dnscrypt:2025-11-17@sha256:55ba1ca3f7c39deeb6071f74c83de9bd2587a581f61229511a50b411a24d23b1
+    image: zydou/dnscrypt:2026-01-24@sha256:dcdd87c14e7bde765ef76ab47a669e4df129038b5d17bbe80195cac3a79c3d91
     hostname: dns-crypt
     restart: on-failure
     environment:
       - TZ=UTC
     volumes:
       - ${APP_DATA_DIR}/dnscrypt/dnscrypt-proxy.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml
-    dns:
-      - "1.1.1.1"
-      - "1.0.0.1"
-    networks:
-      pi-hole-dns-crypt:
-        ipv4_address: 172.20.0.3
-
-networks:
-  pi-hole-dns-crypt:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/29
+    network_mode: host
+    healthcheck:
+      test: ["CMD-SHELL", "nc -zv 127.0.0.1 5300 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
