@@ -1,5 +1,5 @@
 # List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
-listen_addresses = ['127.0.0.1:5300']
+listen_addresses = ['0.0.0.0:53']
 
 # List of servers to use. [] -> Use all that meet config options
 server_names = []
