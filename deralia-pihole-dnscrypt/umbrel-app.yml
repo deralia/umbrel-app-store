@@ -4,7 +4,7 @@ name: Secure Pi-hole
 tagline: Block ads and trackers with Pi-Hole through encrypted DNS queries via DNSCrypt
 icon: https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/icon.svg
 category: Networking
-version: "2025.11.0 (2025-11-17)"
+version: "2025.11.1 (2026-01-24)"
 port: 8082
 description: >-
   Based on the official Umbrel's Pi-hole App.
@@ -29,7 +29,7 @@ gallery:
   - https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/2.jpg
   - https://getumbrel.github.io/umbrel-apps-gallery/pi-hole/3.jpg
 releaseNotes: >-
-  Upgraded to the latest versions of Pi-Hole (2024.07.0) and DNSCrypt (2024-08-23)
+  Upgraded to the latest versions of Pi-Hole (2025.11.1) and DNSCrypt (2026-01-24)
 dependencies: []
 path: "/admin/"
 deterministicPassword: true
